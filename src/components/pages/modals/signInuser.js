@@ -93,6 +93,20 @@ const forgotBtn = () => {
                                 <button onClick={loginBtn}>login account</button>
                             </div>
                         </section>
+                        <section className={`userForgot ${switchSignin}`}>
+                            <h1>forgot</h1>
+                            <p>username / email / mobile no.</p>
+                            <li>
+                                <input type="text" placeholder='ex. budDog@email.com'/>
+                            </li>
+                            <div className="userModalbtn">
+                                <button>search and recover</button>
+                            </div>
+                            <div className="switchBtn">
+                                <p>don't have pawsome account?</p>
+                                <button onClick={signBtn}>create account</button>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>

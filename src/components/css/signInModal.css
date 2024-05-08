@@ -178,3 +178,10 @@
 .userSignup.signin{
     left: 0;
 }
+.userForgot{
+    left: 20vw;
+    transition: .3s ease;
+}
+.userForgot.forgot{
+    left: 0;
+}
