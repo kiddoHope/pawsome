@@ -1,0 +1,46 @@
+.navMain{
+    height: auto;
+    width: 100%;
+    position: fixed;
+}
+.nav-container{
+    padding: 1vw 4vw;
+    z-index: 10;
+}
+.mav-contents{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navlogo img{
+    height: auto;
+    width: 4vw;
+}
+
+
+/* sign up */
+.signUpnav{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.signUpnav button{
+    font-family: 'babydoll';
+    font-size: 1vw;
+    border: none;
+    outline: 0;
+    background: none;
+    cursor: pointer;
+}
+.signUpnav span{
+    height: .1vw;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    background: black;
+    position: absolute;
+    transition: .3s ease;
+}
+.signUpnav button:hover ~ .lineNav{
+    width: 3.6vw;
+}
