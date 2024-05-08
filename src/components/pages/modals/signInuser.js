@@ -41,15 +41,19 @@ const passwordSw = () => {
                             <h1>Login</h1>
                             <p>username</p>
                             <li>
-                                <input type="text" />
+                                <input type="text" placeholder='username'/>
                             </li>
                             <p>password</p>
                             <li>
-                                <input type={typePass} />
+                                <input type={typePass} placeholder='password'/>
                                 {!showPassbtm ? <button onClick={passwordSw}><GrFormView /></button> : <button onClick={passwordSw}><GrFormViewHide GrFormView/></button>}
                             </li>
                             <div className="userModalbtn">
                                 <button>Login</button>
+                            </div>
+                            <div className="switchBtn">
+                                <p>don't have pawsome account?</p>
+                                <button>create account</button>
                             </div>
                         </section>
                     </div>
