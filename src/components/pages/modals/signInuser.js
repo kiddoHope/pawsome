@@ -10,7 +10,9 @@ import { GrFormView,GrFormViewHide  } from "react-icons/gr";
 const Usermodalsign = ({ openSignin,setOpensignin }) => {
 // useState
 const [ showPassbtm, setShowbtn ] = useState(false)
-const [ typePass, setTypepass ] =useState('password')
+const [ typePass, setTypepass ] = useState('password')
+// switch btn login
+const [ switchSignin, setSwitchsignin ] = useState('login')
 
 // show & hide pass
 const passwordSw = () => {
@@ -21,6 +23,17 @@ const passwordSw = () => {
         setTypepass('password')
         setShowbtn(false)
     }
+}
+
+// switches btn sign in
+const loginBtn = () => {
+    setSwitchsignin('login')
+}
+const signBtn = () => {
+    setSwitchsignin('signin')
+}
+const forgotBtn = () => {
+    setSwitchsignin('forgot')
 }
 
   return (
@@ -37,7 +50,7 @@ const passwordSw = () => {
                 </div>
                 <div className="signIn-contents">
                     <div className="signIn-inputs">
-                        <section className='userLogin'>
+                        <section className={`userLogin ${switchSignin}`}>
                             <h1>Login</h1>
                             <p>username</p>
                             <li>
@@ -51,9 +64,33 @@ const passwordSw = () => {
                             <div className="userModalbtn">
                                 <button>Login</button>
                             </div>
+                            <h3 onClick={forgotBtn}>forgot password?</h3>
                             <div className="switchBtn">
                                 <p>don't have pawsome account?</p>
-                                <button>create account</button>
+                                <button onClick={signBtn}>create account</button>
+                            </div>
+                        </section>
+                        <section className={`userSignup ${switchSignin}`}>
+                            <h1>Sign up</h1>
+                            <p>username</p>
+                            <li>
+                                <input type="text" placeholder='ex. budBoy_Dog'/>
+                            </li>
+                            <p>email or mobile no.</p>
+                            <li>
+                                <input type="text" placeholder='ex. budDog@email.com'/>
+                            </li>
+                            <p>password</p>
+                            <li>
+                                <input type={typePass} placeholder='password'/>
+                                {!showPassbtm ? <button onClick={passwordSw}><GrFormView /></button> : <button onClick={passwordSw}><GrFormViewHide GrFormView/></button>}
+                            </li>
+                            <div className="userModalbtn">
+                                <button>Create</button>
+                            </div>
+                            <div className="switchBtn">
+                                <p>already have pawsome account?</p>
+                                <button onClick={loginBtn}>login account</button>
                             </div>
                         </section>
                     </div>

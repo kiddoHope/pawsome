@@ -20,6 +20,7 @@
     border-radius: 2vw;
     display: flex;
     box-shadow: .5vw .5vw 0 black;
+    width: 30vw;
 }
 .signIn-header h1{
     margin: 0;
@@ -59,9 +60,20 @@
 
 .signIn-contents{
     padding: 2vw 0;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+.signIn-inputs{
+    position: relative;
+    width: 20vw;
+}
+.signIn-inputs section{
+    width: 100%;
+    position: absolute;
 }
 .signIn-inputs section h1{
-    margin: 0 0 2vw 0;
+    margin: 0 0 1vw 0;
     text-align: center;
     font-size: 1.5vw;
     font-weight: 1000;
@@ -125,6 +137,15 @@
     box-shadow: .2vw .2vw 0 black;
     transform: scale(1.05);
 }
+.signIn-inputs section h3{
+    font-size: .7vw;
+    text-align: center;
+    margin: 1vw 0 0 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+
 .switchBtn{
     text-align: center;
     margin: 2vw 0 0 0;
@@ -141,4 +162,19 @@
 }
 .switchBtn button:hover{
     transform: scale(1.05);
+}
+
+.userLogin{
+    left: 20vw;
+    transition: .3s ease;
+}
+.userLogin.login{
+    left: 0;
+}
+.userSignup{
+    left: 20vw;
+    transition: .3s ease;
+}
+.userSignup.signin{
+    left: 0;
 }

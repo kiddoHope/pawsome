@@ -27,7 +27,7 @@ const openModalsign = () => {
                         <img src={logoname} alt="" />
                     </div>
                     <div className="signUpnav">
-                        <button onClick={openModalsign}>sign in</button>
+                        <button onClick={openModalsign}>sign up</button>
                         <span className='lineNav'></span>
                     </div>
                 </div>
