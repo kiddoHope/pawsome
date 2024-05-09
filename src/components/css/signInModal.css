@@ -59,12 +59,14 @@
 
 
 .signIn-contents{
-    padding: 2vw 0;
     display: flex;
     overflow: hidden;
-    justify-content: center;
 }
 .signIn-inputs{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
     position: relative;
     width: 20vw;
 }
@@ -80,7 +82,7 @@
 }
 .signIn-contents section p{
     font-size: .7vw;
-    margin: 1vw 0 .5vw 0;
+    margin: .7vw 0 .5vw 0;
 }
 .signIn-contents section li{
     list-style: none;
@@ -90,6 +92,28 @@
     border-radius: 1vw;
     overflow: hidden;
     padding: .2vw 0;
+}
+.signIn-contents section span{
+    font-size: .6vw;
+    color: red;
+    opacity: 0;
+    visibility: hidden;
+}
+.errorlogUsername.true{
+    opacity: 1;
+    visibility: visible;
+}
+.errorlogpass.true{
+    opacity: 1;
+    visibility: visible;
+}
+.errorSignupusername.true{
+    opacity: 1;
+    visibility: visible;
+}
+.errorSignupemail.true{
+    opacity: 1;
+    visibility: visible;
 }
 .signIn-contents section li input{
     width: 100%;
