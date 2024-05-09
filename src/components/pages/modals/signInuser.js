@@ -11,6 +11,7 @@ import { insertUser,authenticateUser } from '../backend/database';
 // axios
 import axios from 'axios';
 import Fetchbuyers from '../backend/fetchBuyers';
+import SuccessSignup from './successModal';
 
 const Usermodalsign = ({ openSignin,setOpensignin }) => {
 // useState
@@ -165,9 +166,9 @@ async function createAccount () {
                 .then( response => {
                 console.log( response.data );
                 setSuccesscreate( true );
-                //   setTimeout( () => {
-                //     window.location.reload();
-                //   }, 3000 );
+                  setTimeout( () => {
+                    window.location.reload();
+                  }, 3000 );
                 } )
                 .catch( response => {
                     const errorRec = response.response.data.error
@@ -191,7 +192,6 @@ async function createAccount () {
           const jsonData = JSON.stringify( insertdata );
           axios.post( insertUser, jsonData )
             .then( response => {
-              console.log( response.data );
               setTimeout( () => {
                 setSuccesscreate( true );
               }, 3000 );
@@ -279,6 +279,11 @@ const loginBuyer = () => {
     <div className="signInmodal">
         <Fetchbuyers onDatafetchbuyers={setUserslist}/>
         <div className="mainSigninModal">
+            <div className={`successSignup-acc ${successCreate}`}>
+                <div className={`scModal ${successCreate}`}>
+                    <SuccessSignup/>
+                </div>
+            </div>
             <div className="signIn-container">
                 <div className="signIn-header">
                     <h1>Create</h1>

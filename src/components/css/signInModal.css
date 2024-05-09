@@ -209,3 +209,28 @@
 .userForgot.forgot{
     left: 0;
 }
+
+/* success handling */
+
+.successSignup-acc{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(11.1px);
+    -webkit-backdrop-filter: blur(11.1px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+}
+.successSignup-acc.true{
+    opacity: 1;
+    visibility: visible;
+}
+.scModal{
+    transform: scale(0);
+    transition: .3s ease;
+}
+.scModal.true{
+    transform: scale(1);
+}
