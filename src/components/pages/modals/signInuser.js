@@ -118,7 +118,7 @@ async function createAccount () {
       console.log( "Test4" );
     } else {
       if ( createEmail.includes( "@", ".com" ) ) {
-        if (usersList.lenght === 0) {
+        if (usersList.type === undefined) {
             const insertdata = {
             mobileno: "0",
             email: createEmail,
@@ -139,63 +139,40 @@ async function createAccount () {
                 console.log(errorRec);
             } );
         } else {
-            if (usersList.type === undefined) {
-                const insertdata = {
-                    mobileno: "0",
-                    email: createEmail,
-                    username: createUsername,
-                    password: createPassword,
-                };
-                const jsonData = JSON.stringify( insertdata );
-                axios.post( insertUser, jsonData )
-                    .then( response => {
-                    console.log( response.data );
-                    setSuccesscreate( true );
-                    alert("welcome to pawsome: " + createUsername)
-                      setTimeout( () => {
-                        window.location.reload();
-                      }, 3000 );
-                    } )
-                    .catch( response => {
-                        const errorRec = response.response.data.error
-                        console.log(errorRec);
-                    } );
+            const filterDataemail = usersList.filter( item => item.email === createEmail );
+            const filterDatausername = usersList.filter( item => item.username === createUsername );
+            if ( filterDatausername[0].username === createUsername) {
+                setDefaultuserplaceholder( "username already used" );
+                setnoCreateusername( true );
+                setnoCreateemail( false );
+            }
+            else if ( filterDataemail[0].email === createEmail) {
+            setDefaultemailplaceholder( "email already used" );
+            setnoCreateemail( true );
+            setnoCreateusername( false );
             } else {
-                const filterDataemail = usersList.filter( item => item.email === createEmail );
-                const filterDatausername = usersList.filter( item => item.username === createUsername );
-                if ( filterDatausername[0].username === createUsername) {
-                    setDefaultuserplaceholder( "username already used" );
-                    setnoCreateusername( true );
-                    setnoCreateemail( false );
-                }
-                else if ( filterDataemail[0].email === createEmail) {
-                setDefaultemailplaceholder( "email already used" );
-                setnoCreateemail( true );
-                setnoCreateusername( false );
-                } else {
-                // const remove = createEmail.indexOf('@');
-                // const userNamedefault = createEmail.substring(0, remove)
-                // console.log(userNamedefault);
-                const insertdata = {
-                    mobileno: "0",
-                    email: createEmail,
-                    username: createUsername,
-                    password: createPassword,
-                };
-                const jsonData = JSON.stringify( insertdata );
-                axios.post( insertUser, jsonData )
-                    .then( response => {
-                    console.log( response.data );
-                    setSuccesscreate( true );
-                    //   setTimeout( () => {
-                    //     window.location.reload();
-                    //   }, 3000 );
-                    } )
-                    .catch( response => {
-                        const errorRec = response.response.data.error
-                        console.log(errorRec);
-                    } );
-                }
+            // const remove = createEmail.indexOf('@');
+            // const userNamedefault = createEmail.substring(0, remove)
+            // console.log(userNamedefault);
+            const insertdata = {
+                mobileno: "0",
+                email: createEmail,
+                username: createUsername,
+                password: createPassword,
+            };
+            const jsonData = JSON.stringify( insertdata );
+            axios.post( insertUser, jsonData )
+                .then( response => {
+                console.log( response.data );
+                setSuccesscreate( true );
+                //   setTimeout( () => {
+                //     window.location.reload();
+                //   }, 3000 );
+                } )
+                .catch( response => {
+                    const errorRec = response.response.data.error
+                    console.log(errorRec);
+                } );
             }
         }
       } else if ( /^\d+$/.test( createEmail ) && createEmail.length > 5 ) {
