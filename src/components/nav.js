@@ -49,7 +49,7 @@ const openModalsign = () => {
         <nav>
             <Fetchbuyers onDatafetchbuyers={setLocalcurbuyer} onDatafetchedlocalbuyer={setBuyerlist}/>
             <div className={`logsignModal ${openSignin}`}>
-                <Usermodalsign setOpensignin={setOpensignin}/>
+                <Usermodalsign onOpensignin={setOpensignin}/>
             </div>
             <div className="nav-container">
                 <div className="mav-contents">
