@@ -2,3 +2,24 @@
     height: auto;
     width: 100%;
 }
+.mainHomelog{
+    transform: scale(0);
+    transition: .3s ease;
+}
+.mainHomelog.true{
+    transform: scale(1);
+}
+.createModalhome{
+    transform: scale(0);
+    transition: .3s ease;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.createModalhome.true{
+    transform: scale(1);
+}

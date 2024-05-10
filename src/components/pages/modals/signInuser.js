@@ -13,7 +13,7 @@ import axios from 'axios';
 import Fetchbuyers from '../backend/fetchBuyers';
 import SuccessSignup from './successModal';
 
-const Usermodalsign = ({setOpensignin }) => {
+const Usermodalsign = ({ onOpensignin }) => {
 // useState
 const [ showPassbtm, setShowbtn ] = useState(false)
 const [ typePass, setTypepass ] = useState('password')
@@ -61,7 +61,7 @@ const passwordSw = () => {
 
 // close signin
 const closeModal = () => {
-    setOpensignin(false)
+    onOpensignin(false)
 }
 // switches btn sign in
 const loginBtn = () => {

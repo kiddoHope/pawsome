@@ -1,6 +1,6 @@
 .successSignup{
     position: absolute;
-    z-index: 2;
+    z-index: 10;
 }
 .scSignupmain{
     height: 100vh;
