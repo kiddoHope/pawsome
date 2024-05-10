@@ -4,6 +4,9 @@ import '../css/introHome.css'
 // assets
 import pawLogo from '../assets/logoname.png'
 import shopcat from '../assets/intro.png'
+import apple from '../assets/purr-apple.png'
+import fish from '../assets/purr-fish-5.png'
+import jar from '../assets/purr-jar-with-cookies.png'
 // js file
 import Usermodalsign from './modals/signInuser'
 
@@ -19,6 +22,11 @@ const openCreate = () => {
             <div className="intHome-container">
                 <div className="intHome-contents">
                     <section>
+                        <div className="floatingImages">
+                            <img src={apple} alt="" id='apple'/>
+                            <img src={fish} alt="" id='fish'/>
+                            <img src={jar} alt="" id='jar'/>
+                        </div>
                         <div className="intTexthome">
                             <h1>welcome to</h1>
                             <div className="pawLogointro">

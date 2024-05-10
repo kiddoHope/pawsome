@@ -69,3 +69,58 @@
     color: white;
     outline: .2vw solid white;
 }
+
+.floatingImages img{
+    position: absolute;
+    height: auto;
+    width: 4vw;
+    z-index: 1;
+}
+#apple{
+    right: 10vw;
+    transform: rotate(30deg);
+    animation: 5s apple ease infinite;
+}
+#fish{
+    left: 7vw;
+    animation: 5s fish ease infinite;
+    z-index: 0;
+}
+#jar{
+    right: 12vw;
+    transform: rotate(-60deg);
+    animation: 5s jar ease infinite;
+}
+@keyframes apple {
+    0%{
+        bottom: 17vw;
+    }
+    50%{
+        bottom: 16vw;
+    }
+    100%{
+        bottom: 17vw;
+    }
+}
+@keyframes fish {
+    0%{
+        top: 25vw;
+    }
+    50%{
+        top: 22vw;
+    }
+    100%{
+        top: 25vw;
+    }
+}
+@keyframes jar {
+    0%{
+        top: 17vw;
+    }
+    50%{
+        top: 15vw;
+    }
+    100%{
+        top: 17vw;
+    }
+}
