@@ -19,48 +19,167 @@ const likeftPost = () => {
 }
   return (
     <div className="featuredpost">
-        <div className="featuredPostMain">
-            <div className="ftPost-container">
-                <div className="ftPost-header">
+      <div className="featuredPostMain">
+        <div className="ftPost-container">
+          <div className="ftPost-header">
+            <section>
+              <h1>Featured Post</h1>
+              <p>Post from owners</p>
+            </section>
+            <img src={logoPaw} alt="" />
+          </div>
+          <hr />
+          <div className="ftPost-contents">
+            <ul>
+              <li>
+                <div className="featPost">
+                  <div className="featPost-head">
+                    <img src={sampPrf} alt="" />
                     <section>
-                        <h1>Featured Post</h1>
-                        <p>Post from owners</p>
+                      <h1>Nathaniel</h1>
+                      <span>10pm</span>
                     </section>
-                    <img src={logoPaw} alt="" />
+                  </div>
+                  <div className="featPost-content">
+                    <p>stupid ass cat</p>
+                    <div className="imgFtpost">
+                      <img src={samPost} alt="" />
+                    </div>
+                    <div className="ftreactIcons">
+                      {!likePost ? (
+                        <PiHeartStraightBold
+                          className={`likeFtpost ${likePost}`}
+                          onClick={likeftPost}
+                        />
+                      ) : (
+                        <PiHeartStraightFill
+                          className={`likeFtpost ${likePost}`}
+                          onClick={likeftPost}
+                        />
+                      )}
+                      <MdOutlineModeComment className="commentFtpost" />
+                      <LuSend className="shareFtpost" />
+                    </div>
+                    <div className="wrcommentFtpost">
+                      <input type="text" />
+                    </div>
+                  </div>
                 </div>
-                <div className="ftPost-contents">
-                    <ul>
-                        <li>
-                            <div className="featPost">
-                                <div className="featPost-head">
-                                    <img src={sampPrf} alt="" />
-                                    <section>
-                                        <h1>Nathaniel</h1>
-                                        <span>10pm</span>
-                                    </section>
-                                </div>
-                                <div className="featPost-content">
-                                    <p>stupid ass cat</p>
-                                    <div className="imgFtpost">
-                                        <img src={samPost} alt="" />
-                                    </div>
-                                    <div className="ftreactIcons">
-                                        {!likePost ? <PiHeartStraightBold className={`likeFtpost ${likePost}`} onClick={likeftPost}/> : <PiHeartStraightFill className={`likeFtpost ${likePost}`} onClick={likeftPost}/>}
-                                        <MdOutlineModeComment className='commentFtpost'/>
-                                        <LuSend className='shareFtpost'/>
-                                    </div>
-                                    <div className="wrcommentFtpost">
-                                        <input type="text" />
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+              </li>
+              <li>
+                <div className="featPost">
+                  <div className="featPost-head">
+                    <img src={sampPrf} alt="" />
+                    <section>
+                      <h1>Nathaniel</h1>
+                      <span>10pm</span>
+                    </section>
+                  </div>
+                  <div className="featPost-content">
+                    <p>stupid ass cat</p>
+                    <div className="imgFtpost">
+                      <img src={samPost} alt="" />
+                    </div>
+                    <div className="ftreactIcons">
+                      {!likePost ? (
+                        <PiHeartStraightBold
+                          className={`likeFtpost ${likePost}`}
+                          onClick={likeftPost}
+                        />
+                      ) : (
+                        <PiHeartStraightFill
+                          className={`likeFtpost ${likePost}`}
+                          onClick={likeftPost}
+                        />
+                      )}
+                      <MdOutlineModeComment className="commentFtpost" />
+                      <LuSend className="shareFtpost" />
+                    </div>
+                    <div className="wrcommentFtpost">
+                      <input type="text" />
+                    </div>
+                  </div>
                 </div>
+              </li>
+              <li>
+                <div className="featPost">
+                  <div className="featPost-head">
+                    <img src={sampPrf} alt="" />
+                    <section>
+                      <h1>Nathaniel</h1>
+                      <span>10pm</span>
+                    </section>
+                  </div>
+                  <div className="featPost-content">
+                    <p>stupid ass cat</p>
+                    <div className="imgFtpost">
+                      <img src={samPost} alt="" />
+                    </div>
+                    <div className="ftreactIcons">
+                      {!likePost ? (
+                        <PiHeartStraightBold
+                          className={`likeFtpost ${likePost}`}
+                          onClick={likeftPost}
+                        />
+                      ) : (
+                        <PiHeartStraightFill
+                          className={`likeFtpost ${likePost}`}
+                          onClick={likeftPost}
+                        />
+                      )}
+                      <MdOutlineModeComment className="commentFtpost" />
+                      <LuSend className="shareFtpost" />
+                    </div>
+                    <div className="wrcommentFtpost">
+                      <input type="text" />
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="featPost">
+                  <div className="featPost-head">
+                    <img src={sampPrf} alt="" />
+                    <section>
+                      <h1>Nathaniel</h1>
+                      <span>10pm</span>
+                    </section>
+                  </div>
+                  <div className="featPost-content">
+                    <p>stupid ass cat</p>
+                    <div className="imgFtpost">
+                      <img src={samPost} alt="" />
+                    </div>
+                    <div className="ftreactIcons">
+                      {!likePost ? (
+                        <PiHeartStraightBold
+                          className={`likeFtpost ${likePost}`}
+                          onClick={likeftPost}
+                        />
+                      ) : (
+                        <PiHeartStraightFill
+                          className={`likeFtpost ${likePost}`}
+                          onClick={likeftPost}
+                        />
+                      )}
+                      <MdOutlineModeComment className="commentFtpost" />
+                      <LuSend className="shareFtpost" />
+                    </div>
+                    <div className="wrcommentFtpost">
+                      <input type="text" />
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div className="viewMoreftP">
+              <button>view more</button>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default Featuredpost

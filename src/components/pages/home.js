@@ -3,6 +3,7 @@ import React from 'react'
 import '../css/home.css'
 // js file
 import Featuredpost from './featuredpost'
+import Introhome from './introHome'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
               
             </div>
             <div className="mainHome-contents">
+                <Introhome/>
                 <Featuredpost/>
             </div>
         </div>

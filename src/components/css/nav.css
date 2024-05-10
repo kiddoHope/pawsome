@@ -2,10 +2,15 @@
     height: auto;
     width: 100%;
     position: fixed;
+    z-index: 10;
+    background: white;
+    transition: .3s ease;
+}
+.navMain.shadow{
+    box-shadow: 0 .5vw 0 black;
 }
 .nav-container{
     padding: 1vw 4vw;
-    z-index: 10;
 }
 .mav-contents{
     display: flex;

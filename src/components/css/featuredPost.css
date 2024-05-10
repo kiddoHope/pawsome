@@ -1,18 +1,34 @@
 .featuredpost{
     height: auto;
     width: 100%;
+    padding: 0 4vw;
+    box-sizing: border-box;
 }
 .featuredPostMain{
-    padding: 0 4vw;
+    border: .2vw solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vw 1vw;
+    box-shadow: .5vw .5vw 0 black;
+    border-radius: 1vw;
 }
 .ftPost-container{
     height: auto;
     width: 100%;
 }
+.ftPost-container hr{
+    margin: 1vw 1.5vw;
+    height: .1vw;
+    background: black;
+    border-radius: 1vw;
+}
 .ftPost-header{
     display: flex;
     align-items: center;
     width: 100%;
+    padding: 0 1.5vw;
+    box-sizing: border-box;
 }
 .ftPost-header section {
     margin: 0 .5vw 0 0;
@@ -28,17 +44,16 @@
     width: 1.5vw;
 }
 .ftPost-contents{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: left;
     margin: 1vw 0 0 0;
+    box-sizing: border-box;
 }
 .ftPost-contents ul{
     display: flex;
     align-items: center;
+    justify-content: center;
     list-style: none;
     padding: 0;
+    width: 100%;
 }
 .ftPost-contents ul li{
     padding: 1vw;
@@ -46,7 +61,7 @@
     border: .2vw solid black;
     background: white;
     width: 15vw;
-    margin: 0 1vw 0 0;
+    margin: 0 1vw;
     box-shadow: .5vw .5vw 0 black;
 }
 .featPost-head{
@@ -133,4 +148,25 @@
     border: none;
     width: 100%;
     font-family: 'babydoll';
+}
+.viewMoreftP{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2vw 0 0 0;
+}
+.viewMoreftP button{
+    padding: .5vw 2vw;
+    outline: .15vw solid black;
+    border: none;
+    border-radius: 1vw;
+    background: white;
+    font-family: 'babydoll';
+    cursor: pointer;
+    transition: .3s ease;
+}
+.viewMoreftP button:hover{
+    box-shadow: .2vw .2vw 0 black;
+    transform: scale(1.01);
 }

@@ -13,3 +13,23 @@ code {
   font-family: 'babydoll';
   src: url('./components/fonts/Baby\ Doll.otf');
 }
+
+body::-webkit-scrollbar{
+  width: .5vw;
+}
+/* Track */
+body::-webkit-scrollbar-track {
+  background: none; 
+}
+ 
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: black; 
+  transition: .3s ease;
+  border-radius: 1vw;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #353535; 
+}

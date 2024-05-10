@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 // css
 import './css/nav.css'
 // icons
@@ -16,7 +16,27 @@ const [localCurbuyer,setLocalcurbuyer] = useState('')
 const [buyerList,setBuyerlist] = useState()
 // open signin modal
 const [openSignin,setOpensignin] = useState(false)
+// cast shadow
+const [hasShadow, setHasShadow] = useState(false);
+// useEffect
 
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > 0) {
+      setHasShadow(true);
+    } else {
+      setHasShadow(false);
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  // Clean up event listener
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
 
 // open modal function
 const openModalsign = () => {
@@ -25,7 +45,7 @@ const openModalsign = () => {
 
 
   return (
-    <div className="navMain">
+    <div className={`navMain ${hasShadow ? 'shadow' : ''}`}>
         <nav>
             <Fetchbuyers onDatafetchbuyers={setLocalcurbuyer} onDatafetchedlocalbuyer={setBuyerlist}/>
             <div className={`logsignModal ${openSignin}`}>
