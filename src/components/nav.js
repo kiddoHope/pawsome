@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 // css
 import './css/nav.css'
+// icons
+import { TbPawFilled } from "react-icons/tb";
 // assets
 import logoname from './assets/logoname.png'
 import Usermodalsign from './pages/modals/signInuser'
@@ -26,15 +28,21 @@ const openModalsign = () => {
     <div className="navMain">
         <nav>
             <Fetchbuyers onDatafetchbuyers={setLocalcurbuyer} onDatafetchedlocalbuyer={setBuyerlist}/>
-            <Usermodalsign openSignin={openSignin} setOpensignin={setOpensignin}/>
+            <div className={`logsignModal ${openSignin}`}>
+                <Usermodalsign setOpensignin={setOpensignin}/>
+            </div>
             <div className="nav-container">
                 <div className="mav-contents">
                     <div className="navlogo">
                         <img src={logoname} alt="" />
                     </div>
                     <div className="signUpnav">
-                        <button onClick={openModalsign}>sign up</button>
-                        <span className='lineNav'></span>
+                        <ul>
+                            <li>showcase</li>
+                            <li>products</li>
+                            <li>about us</li>
+                        </ul>
+                        <button onClick={openModalsign}> <TbPawFilled className='signIco'/>sign up</button>
                     </div>
                 </div>
             </div>

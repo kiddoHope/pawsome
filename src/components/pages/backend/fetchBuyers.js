@@ -6,10 +6,10 @@ const Fetchbuyers = ({ onDatafetchedlocalbuyer, onDatafetchbuyers }) => {
   // useEffect
   useEffect(() => {
     fetchLocalBuyer();
-    fetchBuyers();
+    fetchBuyerlist();
     return () => {
       fetchLocalBuyer();
-      fetchBuyers();
+      fetchBuyerlist();
     };
   }, []);
 
@@ -27,15 +27,15 @@ const Fetchbuyers = ({ onDatafetchedlocalbuyer, onDatafetchbuyers }) => {
   };
 
   // fetch local session & user
-  const fetchBuyers = () => {
-    // login Session
-    // const localLoginsession = localStorage.getItem("loginBuyerlocalSession");
-    // if (localLoginsession === "") {
-    //   console.log("no data");
-    // } else {
-      fetchBuyerlist();
-    // }
-  };
+  // const fetchBuyers = () => {
+  //   // login Session
+  //   // const localLoginsession = localStorage.getItem("loginBuyerlocalSession");
+  //   // if (localLoginsession === "") {
+  //   //   console.log("no data");
+  //   // } else {
+  //     fetchBuyerlist();
+  //   // }
+  // };
 
   async function fetchBuyerlist() {
     try {

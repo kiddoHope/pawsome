@@ -28,19 +28,39 @@
     font-family: 'babydoll';
     font-size: 1vw;
     border: none;
-    outline: 0;
+    outline: .2vw solid black;
     background: none;
     cursor: pointer;
-}
-.signUpnav span{
-    height: .1vw;
-    width: 0;
-    left: 0;
-    bottom: 0;
-    background: black;
-    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: .5vw 1vw;
+    border-radius: 1vw;
     transition: .3s ease;
 }
-.signUpnav button:hover ~ .lineNav{
-    width: 3.6vw;
+.signUpnav button:hover{
+    box-shadow: .4vw .4vw 0 black;
+}
+.signIco{
+    font-size: 1vw;
+    margin: 0 .5vw 0 0;
+}
+.signUpnav ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0 1.5vw 0 0;
+}
+.signUpnav ul li{
+    margin: 0 0 0 1.5vw;
+    font-size: .8vw;
+    cursor: pointer;
+}
+
+.logsignModal{
+    transform: scale(0);
+    transition: .3s ease;
+}
+.logsignModal.true{
+    transform: scale(1);
 }

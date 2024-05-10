@@ -13,7 +13,7 @@ import axios from 'axios';
 import Fetchbuyers from '../backend/fetchBuyers';
 import SuccessSignup from './successModal';
 
-const Usermodalsign = ({ openSignin,setOpensignin }) => {
+const Usermodalsign = ({setOpensignin }) => {
 // useState
 const [ showPassbtm, setShowbtn ] = useState(false)
 const [ typePass, setTypepass ] = useState('password')
@@ -59,6 +59,10 @@ const passwordSw = () => {
     }
 }
 
+// close signin
+const closeModal = () => {
+    setOpensignin(false)
+}
 // switches btn sign in
 const loginBtn = () => {
     setSwitchsignin('login')
@@ -118,9 +122,20 @@ async function createAccount () {
       setDefaultpasswordplaceholder( "fill password" );
       console.log( "Test4" );
     } else {
+        const customerIDGenerator = (length) => {
+        const charset = '1234567890';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * charset.length);
+            result += charset.charAt(randomIndex);
+        }
+        return result;
+        };
+        const customerID = customerIDGenerator(11)
       if ( createEmail.includes( "@", ".com" ) ) {
         if (usersList.type === undefined) {
             const insertdata = {
+            customerId: customerID,
             mobileno: "0",
             email: createEmail,
             username: createUsername,
@@ -156,6 +171,7 @@ async function createAccount () {
             // const userNamedefault = createEmail.substring(0, remove)
             // console.log(userNamedefault);
             const insertdata = {
+                customerId: customerID,
                 mobileno: "0",
                 email: createEmail,
                 username: createUsername,
@@ -184,6 +200,7 @@ async function createAccount () {
           setnoCreatepassword( true );
         } else {
           const insertdata = {
+            customerId: customerID,
             mobileno: createUsername,
             email: "no email added",
             username: createUsername,
@@ -239,6 +256,7 @@ const loginBuyer = () => {
         const loginSession = "pawsome"+newRandomString+"log"
         const insertdata = {
         username: loginUsername,
+        email: loginUsername,
         password: loginpassword,
         session: loginSession,
         };
@@ -285,6 +303,9 @@ const loginBuyer = () => {
                 </div>
             </div>
             <div className="signIn-container">
+                <div className="closeModal">
+                    <p onClick={closeModal}>x</p>
+                </div>
                 <div className="signIn-header">
                     <h1>Create</h1>
                     <img src={logo} alt="" />

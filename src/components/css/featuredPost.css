@@ -1,0 +1,136 @@
+.featuredpost{
+    height: auto;
+    width: 100%;
+}
+.featuredPostMain{
+    padding: 0 4vw;
+}
+.ftPost-container{
+    height: auto;
+    width: 100%;
+}
+.ftPost-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.ftPost-header section {
+    margin: 0 .5vw 0 0;
+}
+.ftPost-header h1{
+    margin: 0;
+}
+.ftPost-header p{
+    margin: 0;
+}
+.ftPost-header img{
+    height: 100%;
+    width: 1.5vw;
+}
+.ftPost-contents{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 1vw 0 0 0;
+}
+.ftPost-contents ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+.ftPost-contents ul li{
+    padding: 1vw;
+    border-radius: 1vw;
+    border: .2vw solid black;
+    background: white;
+    width: 15vw;
+    margin: 0 1vw 0 0;
+    box-shadow: .5vw .5vw 0 black;
+}
+.featPost-head{
+    display: flex;
+    align-items: center;
+}
+.featPost-head img{
+    height: auto;
+    width: 2vw;
+    margin: 0 .5vw 0 0;
+    cursor: pointer;
+}
+.featPost-head section h1{
+    margin: 0;
+    font-size: 1vw;
+    cursor: pointer;
+}
+.featPost-head section span{
+    font-size: .7vw;
+}
+.featPost-content{
+    margin: .5vw 0 0 0;
+}
+.featPost-content p{
+    width: 100%;
+    font-size: .8vw;
+    margin: 0 0 .5vw 0;
+}
+.imgFtpost{
+    width: 100%;
+    height: 12vw;
+    border-radius: 1vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .15vw solid black;
+    cursor: pointer;
+}
+.imgFtpost img{
+    height: auto;
+    width: 10vw;
+}
+.ftreactIcons{
+    margin: .5vw 0 0 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.likeFtpost{
+    font-size: 1vw;
+    cursor: pointer;
+    transition: .3s ease;
+    margin: 0 .5vw 0 0;
+}
+.likeFtpost.true{
+    color: red;
+}
+.commentFtpost{
+    font-size: 1vw;
+    cursor: pointer;
+    bottom: -.1vw;
+    left: 1.5vw;
+    position: absolute;
+}
+.shareFtpost{
+    font-size: 1vw;
+    position: absolute;
+    left: 3vw;
+    bottom: -.1vw;
+    cursor: pointer;
+}
+.wrcommentFtpost{
+    width: 100%;
+    border: .15vw solid black;
+    margin: .5vw 0 0 0;
+    border-radius: .6vw;
+    position: relative;
+    padding: .2vw .5vw;
+    box-sizing: border-box;
+}
+.wrcommentFtpost input{
+    outline: 0;
+    border: none;
+    width: 100%;
+    font-family: 'babydoll';
+}

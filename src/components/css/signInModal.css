@@ -13,6 +13,7 @@
     justify-content: center;
 }
 .signIn-container{
+    position: relative;
     height: auto;
     width: 100%;
     outline: .15vw solid black;
@@ -21,6 +22,21 @@
     display: flex;
     box-shadow: .5vw .5vw 0 black;
     width: 30vw;
+    background: white;
+}
+.closeModal{
+    position: absolute;
+    right: 1.5vw;
+    top: 0;
+    z-index: 1;
+}
+.closeModal p{
+    font-size: 1.5vw;
+    transition: .3s ease;
+    cursor: pointer;
+}
+.closeModal p:hover{
+    color: red;
 }
 .signIn-header h1{
     margin: 0;
