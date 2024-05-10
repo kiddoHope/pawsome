@@ -9,6 +9,7 @@ import { LuSend } from "react-icons/lu";
 import sampPrf from '../assets/notes-male-avatar.png'
 import samPost from '../assets/purr-financial-success.png'
 import logoPaw from '../assets/logo.png'
+import daga from '../assets/purr-16.png'
 
 
 const Featuredpost = () => {
@@ -19,6 +20,10 @@ const likeftPost = () => {
 }
   return (
     <div className="featuredpost">
+      <div className="featuredpost-head">
+        <h1>join to our community</h1>
+        <p>connect with other fur-parents</p>
+      </div>
       <div className="featuredPostMain">
         <div className="ftPost-container">
           <div className="ftPost-header">
@@ -177,6 +182,9 @@ const likeftPost = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="overlayImgs">
+        <img src={daga} alt="" id='data'/>
       </div>
     </div>
   );
