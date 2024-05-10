@@ -24,3 +24,47 @@
 .createModalhome.true{
     transform: scale(1);
 }
+
+.whyInfo{
+    height: 100vh;
+    width: 100%;
+}
+.whyPawsome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.whyPawsome img{
+    height: auto;
+    width: 50vw;
+}
+.introAnscards{
+    margin: 4vw 0 0 0;
+}
+
+.introAnscards ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.introAnscards ul li{
+    background: white;
+    outline: .2vw solid black;
+    box-shadow: .5vw .5vw 0 black;
+    border-radius: 1vw;
+    height: 11vw;
+    width: 17vw;
+    text-align: center;
+    padding: 2vw 1vw 1vw 1vw;
+    box-sizing: border-box;
+}
+.introAnscards ul li h1{
+    font-size: 1.5vw;
+    margin: 0;
+}
+.introAnscards ul li p{
+    font-size: .8vw;
+    margin: 1vw 0 0 0;
+}
