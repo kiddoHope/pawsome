@@ -1,0 +1,104 @@
+.homeprdList{
+    height: auto;
+    width: 100%;
+}
+.homePrdlist-contents{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4vw;
+}
+.homePrdlist-contents li{
+    padding: .5vw .5vw 1vw .5vw;
+    outline: .2vw solid black;
+    border-radius: 1vw;
+    box-shadow: .3vw .3vw 0 black;
+    width: 15vw;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s ease;
+    margin: 1vw;
+}
+.homePrdlist-contents li:hover{
+    transform: scale(1.01);
+    box-shadow: .7vw .7vw 0 black;
+}
+.prdListImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: .2vw solid black;
+    border-radius: 1vw;
+    padding: 1vw;
+}
+.prdListImg img{
+    height: auto;
+    width: 10vw;
+}
+.homePrdlist-contents li h1{
+    font-size: 1.2vw;
+    margin: .5vw 0;
+}
+.homePrdlist-contents li hr{
+    margin: 0;
+    height: .1vw;
+    background: black;
+    margin: 0 3vw;
+}
+.homePrdlist-contents li p{
+    font-size: .8vw;
+    margin: .5vw 0;
+}
+.homePrdlist-contents li h2{
+    font-size: 1.2vw;
+    color: red;
+    margin: 0;
+}
+.homePrdlist-contents li span{
+    font-size: .6vw;
+    margin: .3vw 0;
+}
+.prdListBtn{
+    margin: 1vw 0 0 0;
+}
+.prdListBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.prdListBtn button{
+    padding: .5vw;
+    width: 6vw;
+    margin: 0 .5vw;
+    outline: .15vw solid black;
+    border: none;
+    border-radius: 1vw;
+    font-family: 'babydoll';
+    cursor: pointer;
+    background: white;
+    transition: .3s ease;
+}
+.prdListBtn button:hover{
+    box-shadow: .2vw .2vw 0 black;
+}
+.viewMoreprd{
+    margin: 1vw 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.viewMoreprd button{
+    padding: .5vw 3vw;
+    border: none;
+    outline: .2vw solid black;
+    border-radius: 1vw;
+    box-shadow: .2vw .2vw 0 black;
+    font-family: 'babydoll';
+    cursor: pointer;
+    background: white;
+    transition: .3s ease;
+}
+.viewMoreprd button:hover{
+    transform: scale(1.01);
+    box-shadow: .5vw .5vw 0 black;
+}

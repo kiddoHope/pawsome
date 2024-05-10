@@ -7,6 +7,7 @@ import Introhome from './introHome'
 import Fetchbuyers from './backend/fetchBuyers'
 import Usermodalsign from './modals/signInuser'
 import why from '../assets/why.png'
+import HomeprdList from './homePrdlist'
 
 const Home = ({}) => {
 const [localCurbuyer,setLocalcurbuyer] = useState()
@@ -54,6 +55,7 @@ console.log(openModal);
                       </ul>
                     </div>
                   </div>
+                  <HomeprdList/>
                   <Featuredpost/>
               </div>
           </div>

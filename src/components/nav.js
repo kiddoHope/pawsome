@@ -58,6 +58,7 @@ const openModalsign = () => {
                     </div>
                     <div className="signUpnav">
                         <ul>
+                            <li>statistics</li>
                             <li>showcase</li>
                             <li>products</li>
                             <li>about us</li>
