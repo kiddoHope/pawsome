@@ -17,11 +17,13 @@ const Fetchbuyers = ({ onDatafetchedlocalbuyer, onDatafetchbuyers }) => {
   const fetchLocalBuyer = () => {
     // login Session
     const localLoginsession = localStorage.getItem("loginBuyerlocalSession");
+    console.log(localLoginsession);
     if (localLoginsession === null) {
       console.log("no data");
     } else {
       const localUser = localStorage.getItem("currentBuyer");
       const jsonData = JSON.parse(localUser);
+      console.log(jsonData);
       onDatafetchedlocalbuyer(jsonData);
     }
   };
@@ -41,9 +43,8 @@ const Fetchbuyers = ({ onDatafetchedlocalbuyer, onDatafetchbuyers }) => {
     try {
       const response = await fetch(retrieveUser);
       const data = await response.json();
-      const stringy = JSON.stringify(data);
-      const parseData = JSON.parse(stringy);
-      onDatafetchbuyers(parseData);
+      console.log(data);
+      onDatafetchbuyers(data);
     } catch (error) {
       console.log(error);
     }

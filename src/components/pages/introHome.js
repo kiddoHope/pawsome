@@ -8,16 +8,20 @@ import apple from '../assets/purr-apple.png'
 import fish from '../assets/purr-fish-5.png'
 import jar from '../assets/purr-jar-with-cookies.png'
 // js file
-import Usermodalsign from './modals/signInuser'
+import Fetchbuyers from './backend/fetchBuyers'
 
-const Introhome = ({onOpensignin}) => {
+const Introhome = ({ onOpensignin,onDatafetchedlocalbuyer}) => {
+const [localCurbuyer,setLocalcurbuyer] = useState()
+const [buyerList,setBuyerlist] = useState()
 
-
+console.log(localCurbuyer);
+console.log(buyerList);
 const openCreate = () => {
     onOpensignin(true)
 }
   return (
     <div className="introHome">
+        <Fetchbuyers onDatafetchedlocalbuyer={setLocalcurbuyer}/>
         <div className="introHomemain">
             <div className="intHome-container">
                 <div className="intHome-contents">

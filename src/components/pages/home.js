@@ -8,13 +8,14 @@ import Fetchbuyers from './backend/fetchBuyers'
 import Usermodalsign from './modals/signInuser'
 import why from '../assets/why.png'
 import HomeprdList from './homePrdlist'
+import shop from '../assets/sale.png'
+import logopaw from '../assets/logo.png'
 
 const Home = ({}) => {
 const [localCurbuyer,setLocalcurbuyer] = useState()
 const [buyerList,setBuyerlist] = useState()
 const [openModal,setOpenModal] = useState()
 
-console.log(openModal);
 
   return (
     <>
@@ -57,6 +58,24 @@ console.log(openModal);
                   </div>
                   <HomeprdList/>
                   <Featuredpost/>
+                  <div className="homeLast">
+                    <div className="lastHome">
+                      <div className="shoppingCat">
+                        <img src={shop} alt="" className='lastHomeimgleft'/>
+                      </div>
+                      <div className="lHcontents">
+                        <div className="lHlogo">
+                          <img src={logopaw} alt="" />
+                        </div>
+                        <h1>Shop with Confidence</h1>
+                        <p>At PawSome, we prioritize the health and happiness of your pets above all else. With our commitment to quality, convenience, and affordability, you can shop with confidence knowing that you're giving your furry companions the very best. Join the Pawsome family today and make every mealtime a tail-wagging success!</p>
+                        <div className="readMoreHome">
+                          <button>read more</button>
+                          <button>contact us</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
               </div>
           </div>
       </div>

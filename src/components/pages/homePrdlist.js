@@ -10,7 +10,8 @@ const HomeprdList = () => {
         <div className="mainHprdlist">
             <div className="homePrdlist-container">
                 <div className="homePrdlist-header">
-
+                    <h1>our products</h1>
+                    <p>enlist and buy your favorite products for your fur-baby</p>
                 </div>
                 <div className="homePrdlist-contents">
                     <li>

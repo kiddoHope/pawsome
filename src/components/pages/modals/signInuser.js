@@ -21,6 +21,7 @@ const [ typePass, setTypepass ] = useState('password')
 const [ switchSignin, setSwitchsignin ] = useState('login')
 // userlist
 const [ usersList, setUserslist ] = useState( );
+const [ userslocalList, setUserslocallist ] = useState( );
 // inputs
 // create buyers
 const [ createUsername, setCreateusername ] = useState( "" );
@@ -133,7 +134,7 @@ async function createAccount () {
         };
         const customerID = customerIDGenerator(11)
       if ( createEmail.includes( "@", ".com" ) ) {
-        if (usersList.type === undefined) {
+        if (usersList === undefined) {
             const insertdata = {
             customerId: customerID,
             mobileno: "0",
@@ -157,12 +158,12 @@ async function createAccount () {
         } else {
             const filterDataemail = usersList.filter( item => item.email === createEmail );
             const filterDatausername = usersList.filter( item => item.username === createUsername );
-            if ( filterDatausername[0].username === createUsername) {
+            if ( filterDatausername.length !== 0) {
                 setDefaultuserplaceholder( "username already used" );
                 setnoCreateusername( true );
                 setnoCreateemail( false );
             }
-            else if ( filterDataemail[0].email === createEmail) {
+            else if ( filterDataemail.length !== 0) {
             setDefaultemailplaceholder( "email already used" );
             setnoCreateemail( true );
             setnoCreateusername( false );
@@ -194,14 +195,15 @@ async function createAccount () {
         }
       } else if ( /^\d+$/.test( createEmail ) && createEmail.length > 5 ) {
         const filterData = usersList.filter( item => item.mobileno === createEmail );
-        if ( filterData.length > 0 ) {
+        console.log(filterData);
+        if ( filterData.length !== 0 ) {
           console.log( "mobile number already in use" );
           setDefaultuserplaceholder( "number already used" );
           setnoCreatepassword( true );
         } else {
           const insertdata = {
             customerId: customerID,
-            mobileno: createUsername,
+            mobileno: createEmail,
             email: "no email added",
             username: createUsername,
             password: createPassword
@@ -209,9 +211,11 @@ async function createAccount () {
           const jsonData = JSON.stringify( insertdata );
           axios.post( insertUser, jsonData )
             .then( response => {
-              setTimeout( () => {
+                console.log(response);
                 setSuccesscreate( true );
-              }, 3000 );
+                setTimeout( () => {
+                  window.location.reload()
+                }, 3000 );
             } )
             .catch( response => {
                 const errorRec = response.response.data.error
@@ -263,30 +267,39 @@ const loginBuyer = () => {
         const jsonData = JSON.stringify( insertdata );
         axios.post( authenticateUser, jsonData )
         .then( (response) => {
+            const responseSc = response.data
+            console.log(responseSc);
             const localsession = insertdata['session']
-            localStorage.setItem('loginlocalSession', localsession)
+            localStorage.setItem('loginBuyerlocalSession', localsession)
+            console.log(usersList);
             const logged = usersList.filter( item => item.username === loginUsername)
             const jsonData = JSON.stringify(logged[0])
+            console.log(logged);
             localStorage.setItem('currentUser', jsonData)
             localStorage.setItem('logUser', localsession)
-            const localsto = localStorage.getItem('loginlocalSession')
+            const localsto = localStorage.getItem('currentUser')
             console.log(localsto);
             alert('login successfully welcome user: ' + loginUsername)
-            setTimeout( () => {
-                window.location.reload();
-            }, 3000 );
+            // setTimeout( () => {
+            //     window.location.reload();
+            // }, 3000 );
         })
-        .catch( (response) => {
-            const errorRec = response.response.data.error
-            if (errorRec === "wrong password") {
-                setDefaultpasswordloginplaceholder(response.response.data.error)
-                console.log(errorRec);
-                setnoLoginpassword(true);
-                setnoLoginusername(false);
+        .catch( (error) => {
+            if (error) {
+                console.log(error);
             } else {
-                setDefaultuserloginplaceholder(response.response.data.error)
-                setnoLoginpassword(false);
-                setnoLoginusername(true);
+                const errorRec = error.response
+                console.log(errorRec);
+                if (errorRec === "wrong password") {
+                    setDefaultpasswordloginplaceholder(errorRec)
+                    console.log(errorRec);
+                    setnoLoginpassword(true);
+                    setnoLoginusername(false);
+                } else {
+                    setDefaultuserloginplaceholder(errorRec)
+                    setnoLoginpassword(false);
+                    setnoLoginusername(true);
+                }
             }
         } );
     }
@@ -295,7 +308,7 @@ const loginBuyer = () => {
 
   return (
     <div className="signInmodal">
-        <Fetchbuyers onDatafetchbuyers={setUserslist}/>
+        <Fetchbuyers onDatafetchedlocalbuyer={setUserslocallist} onDatafetchbuyers={setUserslist}/>
         <div className="mainSigninModal">
             <div className={`successSignup-acc ${successCreate}`}>
                 <div className={`scModal ${successCreate}`}>
