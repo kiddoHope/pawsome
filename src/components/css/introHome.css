@@ -124,3 +124,177 @@
         top: 17vw;
     }
 }
+.mbsamplePost{
+    display: none;
+}
+.sampAddpip{
+    display: none;
+}
+@media screen and (max-width: 500px){
+    .introHome{
+        height: auto;
+        padding: 25vw 5vw 20vw 5vw;
+    }
+    .intHome-contents{
+        display: none;
+    }
+    .mbsamplePost{
+        display: block;
+        border: .6vw solid black;
+        padding: 5vw 0;
+        border-radius: 4vw;
+        margin: 4vw 0 0 0;
+    }
+    .mbsamplePost:hover{
+        box-shadow: 1.5vw 1.5vw 0 black;
+    }
+    .samplepostHeader{
+        display: flex;
+        justify-content: space-between;
+        height: auto;
+        width: 100%;
+        padding: 0 5vw;
+        box-sizing: border-box;
+    }
+    .mbProf img{
+        height: auto;
+        width: 10vw;
+        margin: 0 3vw 0 0;
+    }
+    .mbsp-name{
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .mbsp-name section h1{
+        font-size: 4vw;
+        margin: 0;
+    }
+    .mbsp-name section p{
+        font-size: 2.5vw;
+        margin: 0;
+    }
+    .mbsampCap{
+        margin: 3vw 0 2vw 0;
+        padding: 0 5vw;
+        box-sizing: border-box;
+    }
+    .mbsampCap p{
+        font-size: 3vw;
+        margin: 0;
+    }
+    .mbpost{
+        border-top: .3vw solid black;
+        border-bottom: .3vw solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5vw;
+    }
+    .mbpost img{
+        height: auto;
+        width: 100%;
+    }
+    .mbsampostIcons{
+        margin: 3vw 0 0 0;
+    }
+    .mbsampReacts{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    #sampReacts{
+        font-size: 3.5vw;
+        padding: 2vw 10vw;
+        border: .4vw solid black;
+        border-radius: 5vw;
+    }
+    #sampReacts:hover{
+        box-shadow: .7vw .7vw 0 black;
+    }
+    .msampComment{
+        margin: 3vw 0 0 0;
+        padding: 0 3vw;
+    }
+    .msampComment section{
+        border: .3vw solid black;
+        border-radius: 5vw;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        padding: 2vw 3vw;
+    }
+    .msampComment section input{
+        width: 100%;
+        border: none;
+        background: none;
+        outline: 0;
+        font-size: 3vw;
+        font-family: 'babydoll';
+    }
+    .mbSendcomment{
+        font-size: 5vw;
+    }
+    .sampAddpip{
+        margin: 3vw 0 0 0;
+        display: flex;
+        align-items: center;
+    }
+    .sampips{
+        border: .6vw solid black;
+        width: 100%;
+        padding: 4vw;
+        box-sizing: border-box;
+        border-radius: 4vw;
+    }
+    .sampipsheader h1{
+        font-size: 3vw;
+        margin: 0;
+    }
+    .sampipsheader section{
+        margin: 2vw 0 0 0;
+        padding: 1vw 0;
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+    }
+    .samPetscard{
+        border: .5vw solid black;
+        border-radius: 3vw;
+        margin: 0 3vw 0 0;
+        padding: 2vw;
+        box-shadow: .3vw .3vw 0 black;
+    }
+    .samPetscard h1{
+        font-size: 4vw;
+        margin: 2vw 0;
+    }
+    .sPetspf{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3vw;
+        border: .3vw solid black;
+    }
+    .sPetspf img{
+        height: auto;
+        width: 60vw;
+    }
+    .sampAdd{
+        width: 100%;
+        border: .3vw solid black;
+        border-radius: 3vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s ease;
+    }
+    .sampAdd p{
+        font-size: 3vw;
+    }
+    .sampAdd:hover{
+        background: black;
+        color: white;
+    }
+}

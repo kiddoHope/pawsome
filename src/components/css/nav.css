@@ -112,3 +112,69 @@
     outline: .2vw solid black;
     box-shadow: .3vw .3vw 0 black;
 }
+.mobileNav{
+    display: none;
+}
+
+@media screen and (max-width: 500px){
+    .navMain{
+        height: auto;
+        width: 100%;
+        position: fixed;
+        z-index: 10;
+        background: white;
+        transition: .3s ease;
+    }
+    nav{
+        display: none;
+    }
+    .mobileNav{
+        display: block;
+    }
+    .mbnavlogo{
+        padding: 5vw 5vw 1vw 5vw;
+    }
+    .mbnavlogo img{
+        height: auto;
+        width: 20vw;
+    }
+    .mbLogosearch{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .mbSearch{
+        padding: 5vw 5vw 2vw 5vw;
+    }
+    .searchInput{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border: .4vw solid black;
+        border-radius: 5vw;
+        overflow: hidden;
+        box-shadow: .5vw .5vw 0 black;
+    }
+    .searchInput input{
+        padding: 1vw 2vw;
+        border: none;
+        outline: 0;
+        background: none;
+        font-size: 3vw;
+        font-family: 'babydoll';
+        width: 100%;
+    }
+    .mbIconsearch{
+        font-size: 3vw;
+        margin: 0 3vw 0 1vw;
+    }
+    .mbNavicons{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .mbIcons{
+        font-size: 5vw;
+        padding: 3vw 6vw;
+    }
+}

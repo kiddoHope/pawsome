@@ -68,3 +68,9 @@
     font-size: .8vw;
     margin: 1vw 0 0 0;
 }
+
+@media screen and (max-width: 500px){
+    .whyInfo{
+        display: none;
+    }
+}
