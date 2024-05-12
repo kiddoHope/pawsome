@@ -57,7 +57,9 @@ const [openModal,setOpenModal] = useState()
                     </div>
                   </div>
                   <HomeprdList/>
-                  <Featuredpost/>
+                  <div className="featurePosthome">
+                    <Featuredpost/>
+                  </div>
                   <div className="homeLast">
                     <div className="lastHome">
                       <div className="shoppingCat">

@@ -68,9 +68,120 @@
     font-size: .8vw;
     margin: 1vw 0 0 0;
 }
-
+.homeLast{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.lastHome{
+    padding: 2vw 0;
+}
+.lHlogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.shoppingCat{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+.lHlogo img{
+    height: auto;
+    width: 3vw;
+}
+.lastHome{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.lastHomeimgleft{
+    height: auto;
+    width: 40vw;
+}
+.lHcontents h1{
+    margin: .5vw 0;
+    font-size: 1.5vw;
+}
+.lHcontents p{
+    font-size: 1vw;
+    width: 100%;
+    padding: 0 5vw;
+    box-sizing: border-box;
+}
+.readMoreHome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2vw 0 0 0;
+}
+.readMoreHome button{
+    margin: 0 .5vw;
+    padding: .5vw 3vw;
+    outline: .2vw solid black;
+    border: none;
+    border-radius: 1vw;
+    font-size: 1vw;
+    font-family: 'babydoll';
+    background: white;
+    box-shadow: .2vw .2vw 0 black;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.readMoreHome button:hover{
+    transform: scale(1.01);
+    box-shadow: .5vw .5vw 0 black;
+}
 @media screen and (max-width: 500px){
     .whyInfo{
         display: none;
+    }
+    .featurePosthome{
+        display: none;
+    }
+    .homeLast{
+        height: auto;
+        display: block;
+    }
+    .shoppingCat{
+        width: 100%;
+        padding: 10vw;
+        box-sizing: border-box;
+    }
+    .lHlogo img{
+        width: 10vw;
+    }
+    .lastHome{
+        display: block;
+    }
+    .lastHomeimgleft{
+        height: auto;
+        width: 100%;
+    }
+    .lHcontents h1{
+        margin: 2vw 0;
+        font-size: 4vw;
+    }
+    .lHcontents p{
+        font-size: 3vw;
+        padding: 0 10vw;
+    }
+    .readMoreHome{
+        margin: 4vw 0 0 0;
+    }
+    .readMoreHome button{
+        margin: 0 2vw;
+        padding: 3vw 8vw;
+        outline: .3vw solid black;
+        border-radius: 4vw;
+        font-size: 4vw;
+        box-shadow: .5vw .5vw 0 black;
+    }
+    .readMoreHome button:hover{
+        transform: scale(1.05);
+        box-shadow: 1vw 1vw 0 black;
     }
 }

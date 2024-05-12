@@ -65,7 +65,7 @@
 .ftmessage section textarea::placeholder{
     font-style: italic;
 }
-.ftMsbtm{
+.ftMsbtn{
     width: 100%;
     display: flex;
     align-items: center;
@@ -127,4 +127,93 @@
 }
 .ftIcons:hover{
     opacity: 100%;
+}
+
+@media screen and (max-width: 500px){
+    .footer-container{
+        padding: 30vw 5vw 5vw 5vw;
+    }
+    .footer-header span{
+        font-size: 2vw;
+        opacity: 70%;
+    }
+    .ftLogo img{
+        height: auto;
+        width: 30vw;
+    }
+    .footerEndnote p{
+        width: 100%;
+        font-size: 2.5vw;
+    }
+    .footer-contents{
+        margin: 4vw 0 0 0;
+        outline: .5vw solid black;
+        padding: 3vw;
+        border-radius: 1vw;
+        display: block;
+        box-shadow: 2vw 2vw 0 black;
+    }
+    .ftmessage h1{
+        font-size: 3vw;
+        font-weight: 100;
+    }
+    .ftmessage section{
+        border: none;
+        outline: .4vw solid black;
+        padding: 3vw;
+        border-radius: 3vw;
+        margin: 3vw 0 0 0;
+        width: 100%;
+    }
+    .ftmessage section textarea{
+        font-size: 3vw;
+    }
+    .ftMsbtn{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        margin: 1vw 0 0 0;
+    }
+    .ftMsbtn button{
+        width: 100%;
+        font-size: 3vw;
+        padding: 3vw;
+        outline: .3vw solid black;
+        border-radius: 3vw;
+    }
+    .ftMsbtn button:hover{
+        box-shadow: 1vw 1vw 0 black;
+    }
+    .footer-contents ul h1{
+        margin: 0 1vw;
+        font-size: 3vw;
+    }
+    .footer-contents ul p{
+        margin: 1vw 0 0 0;
+        font-size: 2vw;
+        transition: .3s ease;
+    }
+    .ftSocials{
+        margin: 5vw 0 0 0;
+    }
+    .ftSocialsicons h1{
+        margin: 0;
+        font-size: 4vw;
+        font-weight: 100;
+    }
+    .fticons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .ftIcons{
+        font-size: 5vw;
+        margin: 2vw 1vw;
+        opacity: 75%;
+    }
+    .ftIcons:hover{
+        opacity: 100%;
+    }
+    
 }

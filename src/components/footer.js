@@ -34,9 +34,11 @@ const Footer = () => {
                     <div className="ftSocials">
                         <div className="ftSocialsicons">
                             <h1>Follow us here:</h1>
-                            <FaFacebook className='ftIcons'/>
-                            <FaInstagramSquare className='ftIcons'/>
-                            <FaLinkedin className='ftIcons'/>
+                            <div className="fticons">
+                                <FaFacebook className='ftIcons'/>
+                                <FaInstagramSquare className='ftIcons'/>
+                                <FaLinkedin className='ftIcons'/>
+                            </div>
                         </div>
                     </div>
                     <ul>

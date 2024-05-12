@@ -113,3 +113,92 @@
     transform: scale(1.01);
     box-shadow: .5vw .5vw 0 black;
 }
+
+@media screen and (max-width: 500px){
+    .homePrdlist-header{
+        text-align: center;
+    }
+    .homePrdlist-header h1{
+        font-size: 5vw;
+    }
+    .homePrdlist-header p{
+        font-size: 3vw;
+    }
+    .homePrdlist-contents{
+        padding: 1vw 5vw;
+        justify-content: center;
+    }
+    .homePrdlist-contents li{
+        padding: 2vw;
+        outline: .5vw solid black;
+        border-radius: 3vw;
+        box-shadow: 1vw 1vw 0 black;
+        width: 37vw;
+        margin: 2vw;
+    }
+    .homePrdlist-contents li:hover{
+        transform: scale(1.05);
+        box-shadow: 1.5vw 1.5vw 0 black;
+    }
+    .prdListImg{
+        outline: .3vw solid black;
+        border-radius: 3vw;
+        padding: 3vw;
+    }
+    .prdListImg img{
+        width: 30vw;
+    }
+    .homePrdlist-contents li h1{
+        font-size: 3vw;
+        margin: 2vw 0;
+    }
+    .homePrdlist-contents li hr{
+        margin: 0;
+        height: .2vw;
+        background: black;
+        margin: 0 3vw;
+    }
+    .homePrdlist-contents li p{
+        font-size: 2.5vw;
+        margin: 3vw 0;
+    }
+    .homePrdlist-contents li h2{
+        font-size: 3.5vw;
+    }
+    .homePrdlist-contents li span{
+        font-size: 2vw;
+        margin: 0;
+    }
+    .prdListBtn{
+        margin: 2vw 0 0 0;
+    }
+    .prdListBtn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .prdListBtn button{
+        padding: 2vw 0;
+        width: 100%;
+        margin: 0 .5vw;
+        outline: .3vw solid black;
+        font-size: 2.5vw;
+        border-radius: 3vw;
+    }
+    .prdListBtn button:hover{
+        box-shadow: 1vw 1vw 0 black;
+    }
+    .viewMoreprd{
+        margin: 3vw 0 0 0;
+    }
+    .viewMoreprd button{
+        padding: 1vw 5vw;
+        outline: .3vw solid black;
+        border-radius: 3vw;
+        box-shadow: .5vw .5vw 0 black;
+    }
+    .viewMoreprd button:hover{
+        transform: scale(1.01);
+        box-shadow: 1vw 1vw 0 black;
+    }
+}

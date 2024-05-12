@@ -16,6 +16,8 @@ import prof from '../assets/notes-male-avatar.png'
 import stupidcat from '../assets/purr-online-shopping.png'
 import why from '../assets/why.png'
 import spyCat from '../assets/purr-cat-sitting-and-playing-with-a-spider.png'
+import emily from '../assets/purr-two-cats-stretching-their-hind-legs.png'
+import selfie from '../assets/purr-camera-access.png'
 
 const Introhome = ({ onOpensignin }) => {
   const [localCurbuyer, setLocalcurbuyer] = useState();
@@ -83,7 +85,7 @@ const Introhome = ({ onOpensignin }) => {
             </div>
             <div className="mbSamppost">
               <div className="mbsampCap">
-                <p>Whether your pet prefers kibble, wet food, or treats, we offer a wide range of options to suit every taste and dietary requirement.</p>
+                <p>Welcome to Pawsome. can you just by this stupid cat please.</p>
               </div>
               <div className="mbpost">
                 <img src={stupidcat} alt="" />
@@ -261,6 +263,52 @@ const Introhome = ({ onOpensignin }) => {
             </div>
             <div className="mbSamppost">
               <div className="mbsampCap">
+                <p>yooooo, this cat can send a selfie!</p>
+              </div>
+              <div className="mbpost">
+                <img src={selfie} alt="" />
+              </div>
+              <div className="mbsampostIcons">
+                <div className="mbsampReacts">
+                  {!likePost ? (
+                    <PiHeartStraightBold
+                      className={`sampPostlike ${likePost}`}
+                      onClick={likeftPost}
+                      id='sampReacts'
+                    />
+                  ) : (
+                    <PiHeartStraightFill
+                      className={`sampPostlike ${likePost}`}
+                      onClick={likeftPost}
+                      id='sampReacts'
+                    />
+                  )}
+                  <MdOutlineModeComment className="sampcommentFtpost" id='sampReacts'/>
+                  <LuSend className="sampshareFtpost" id='sampReacts'/>
+                </div>
+                <div className="msampComment">
+                  <section>
+                    <input type="text" />
+                    <IoMdSend className='mbSendcomment'/>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mbsamplePost">
+            <div className="samplepostHeader">
+              <div className="mbProf">
+                <img src={prof} alt="" />
+              </div>
+              <div className="mbsp-name">
+                <section>
+                  <h1>Nathaniel</h1>
+                  <p>24hrs ago</p>
+                </section>
+              </div>
+            </div>
+            <div className="mbSamppost">
+              <div className="mbsampCap">
                 <p>Our products are formulated by pet nutrition experts to promote overall health and vitality, supporting your pet's well-being from nose to tail.</p>
               </div>
               <div className="mbsampostIcons">
@@ -306,9 +354,9 @@ const Introhome = ({ onOpensignin }) => {
                   </div>
                   <div className="samPetscard">
                     <div className="sPetspf">
-                      <img src={spyCat} alt="" />
+                      <img src={emily} alt="" />
                     </div>
-                    <h1>cat rodriguez</h1>
+                    <h1>emily perez</h1>
                     <div className="sampAdd">
                       <p>add fur-baby</p>
                     </div>
@@ -402,6 +450,9 @@ const Introhome = ({ onOpensignin }) => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="mbviewMorepost">
+            <button>view more post</button>
           </div>
         </div>
       </div>
