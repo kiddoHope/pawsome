@@ -1,0 +1,32 @@
+.loader{
+    height: auto;
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+}
+.mainLoader{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    position: relative;
+}
+.mainLoader img{
+    height: auto;
+    width: 7vw;
+    animation: 5s load ease infinite;
+}
+
+@keyframes load {
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(120deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

@@ -8,7 +8,7 @@ import logoname from './assets/logoname.png'
 import Usermodalsign from './pages/modals/signInuser'
 import Fetchbuyers from './pages/backend/fetchBuyers'
 
-const Nav = () => {
+const Nav = ( {close} ) => {
 // useState
 // fetch local buyer
 const [localCurbuyer,setLocalcurbuyer] = useState('')
@@ -18,6 +18,10 @@ const [buyerList,setBuyerlist] = useState()
 const [openSignin,setOpensignin] = useState(false)
 // cast shadow
 const [hasShadow, setHasShadow] = useState(false);
+// set Btns
+const [logout,setLogout] = useState(false)
+
+
 // useEffect
 
 useEffect(() => {
@@ -29,7 +33,6 @@ useEffect(() => {
       setHasShadow(false);
     }
   };
-
   window.addEventListener('scroll', handleScroll);
 
   // Clean up event listener
@@ -43,6 +46,10 @@ const openModalsign = () => {
     setOpensignin(true)
 }
 
+const logoutbtn = () => {
+  localStorage.setItem("loginBuyerlocalSession", '');
+  localStorage.setItem("currentUser", '');
+}
 
   return (
     <div className={`navMain ${hasShadow ? 'shadow' : ''}`}>
@@ -64,6 +71,7 @@ const openModalsign = () => {
                             <li>about us</li>
                         </ul>
                         <button onClick={openModalsign}> <TbPawFilled className='signIco'/>sign up</button>
+                        <button onClick={logoutbtn}> <TbPawFilled className='signIco'/>Logout</button>
                     </div>
                 </div>
             </div>

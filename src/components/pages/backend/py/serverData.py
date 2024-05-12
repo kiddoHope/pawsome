@@ -17,7 +17,7 @@ database = "pawsome"
 conn = pymysql.connect(host=servername, user=username, password=password, database=database)
 
 @app.route('/', methods=['POST'])
-def register_user():
+def register_user_update():
     # Read incoming data
     data = request.get_data(as_text=True)  # Get the raw POST data
     data = json.loads(data)  # Decode JSON data into a Python dictionary
@@ -32,7 +32,7 @@ def register_user():
 
         # Insert data
         cursor = conn.cursor()
-        sql = "INSERT INTO buyer (mobileno, email, username, password, customerID) VALUES (%s, %s, %s, %s, %s)"
+        sql = "INSERT INTO buyer (mobileno, email, username, password, customer_id) VALUES (%s, %s, %s, %s, %s)"
         try:
             cursor.execute(sql, (mobileno, email, username, hash_pass, customerID))
             conn.commit()
@@ -44,8 +44,52 @@ def register_user():
             cursor.close()
     else:
         return "No data received"
+# @app.route('/', methods=['POST'])
+# def register_or_update():
+#     # Read incoming data
+#     data = request.get_json()
+#     if data:
+#         # Extract data from the dictionary
+#         mobileno = data.get("mobileno")
+#         email = data.get('email')
+#         username = data.get('username')
+#         password = data.get('password')
 
+#         # Check if the provided username already exists in the database
+#         cursor = conn.cursor()
+#         sql = "SELECT username FROM buyer WHERE mobileno=%s, email=%s, username=%s, password=%s WHERE customerID=%s"
+#         cursor.execute(sql, (username,))
+#         existing_record = cursor.fetchone()
+#         cursor.close()
 
+#         if existing_record:
+#             # If the record already exists, perform an update
+#             customerID = existing_record[0]
+#             sql = "UPDATE buyer SET mobileno=%s, email=%s, username=%s, password=%s WHERE customerID=%s"
+#             values = (mobileno, email, username, password, customerID)
+#             message_success = "Buyer data updated successfully"
+#             message_error = "Error updating record"
+#         else:
+#             # If the record does not exist, perform a registration
+#             hash_pass = generate_hash(password)
+#             sql = "INSERT INTO buyer (mobileno, email, username, password) VALUES (%s, %s, %s, %s)"
+#             values = (mobileno, email, username, hash_pass)
+#             message_success = "User Registered"
+#             message_error = "Error inserting product"
+
+#         cursor = conn.cursor()
+#         try:
+#             cursor.execute(sql, values)
+#             conn.commit()
+#             return message_success
+#         except Exception as e:
+#             conn.rollback()
+#             return message_error + ": " + str(e)
+#         finally:
+#             cursor.close()
+#     else:
+#         return "No data received"
+    
 @app.route('/', methods=['GET'])
 def get_data():
     # Fetch data

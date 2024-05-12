@@ -9,10 +9,10 @@
 // const insertProduct = "http://localhost/directdeal/product/insert_database.php";
 // const updateProduct = "http://localhost/directdeal/product/update_database.php";
 // buyer
-const retrieveUser = process.env.REACT_APP_PAWSOME_RETRIEVE;
-const insertUser = process.env.REACT_APP_PAWSOME_INSERT;
-const updateUser = process.env.REACT_APP_PAWSOME_UPDATE;
-const authenticateUser = process.env.REACT_APP_PAWSOME_AUTHENTICATE;
+// const retrieveUser = process.env.REACT_APP_PAWSOME_RETRIEVE;
+// const insertUser = process.env.REACT_APP_PAWSOME_INSERT;
+// const updateUser = process.env.REACT_APP_PAWSOME_UPDATE;
+// const authenticateUser = process.env.REACT_APP_PAWSOME_AUTHENTICATE;
 // distributor
 // const retriveDistributor = "http://localhost/directdeal/distributor/retrieve_database.php";
 // const insertDistributor = "http://localhost/directdeal/distributor/insert_database.php";
@@ -24,11 +24,11 @@ const authenticateUser = process.env.REACT_APP_PAWSOME_AUTHENTICATE;
 // const updateUser =  "http://localhost/pawsome/user/update_database.php";
 // const authenticateUser = "http://localhost/pawsome/user/authenticate.php";
 
-// // py localhosting
-// const retrieveUser = "http://127.0.0.1:5000/";
-// const insertUser = "http://127.0.0.1:5000/";
-// const updateUser =  "http://localhost/pawsome/user/update_database.php";
-// const authenticateUser = "http://localhost/pawsome/user/authenticate.php";
+// py localhosting
+const retrieveUser = "http://127.0.0.1:5000/";
+const insertUser = "http://127.0.0.1:5000/";
+const updateUser =  "http://localhost/pawsome/user/update_database.php";
+const authenticateUser = "http://localhost/pawsome/user/authenticate.php";
 export {
   //   retriveProduct,
   //   insertProduct,

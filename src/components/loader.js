@@ -1,6 +1,6 @@
 import React from 'react'
 // css
-import '../css/loader.css'
+import './css/loader.css'
 // assets
 import round from './assets/purr-cat-in-the-pot-1.png'
 
