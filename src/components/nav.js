@@ -6,14 +6,11 @@ import { TbPawFilled } from "react-icons/tb";
 // assets
 import logoname from './assets/logoname.png'
 import Usermodalsign from './pages/modals/signInuser'
-import Fetchbuyers from './pages/backend/fetchBuyers'
 
 const Nav = ( {close} ) => {
 // useState
-// fetch local buyer
-const [localCurbuyer,setLocalcurbuyer] = useState('')
 // fetch buyers
-const [buyerList,setBuyerlist] = useState()
+const [user,setUser] = useState()
 // open signin modal
 const [openSignin,setOpensignin] = useState(false)
 // cast shadow
@@ -34,7 +31,7 @@ useEffect(() => {
     }
   };
   window.addEventListener('scroll', handleScroll);
-
+  localuser()
   // Clean up event listener
   return () => {
     window.removeEventListener('scroll', handleScroll);
@@ -45,18 +42,35 @@ useEffect(() => {
 const openModalsign = () => {
     setOpensignin(true)
 }
+const localuser = () => {
+  const localLoginsession = localStorage.getItem("loginBuyerlocalSession");
+  console.log(localLoginsession);
+
+  if (localLoginsession !== '') {
+    setLogout(true)
+    fetchBuyerlist()
+  } else {
+    setLogout(false)
+  }
+}
+
+async function fetchBuyerlist() {
+  const data = localStorage.getItem('currentUser')
+  const jsondata = JSON.parse(data)
+  setUser(jsondata)
+}
 
 const logoutbtn = () => {
   localStorage.setItem("loginBuyerlocalSession", '');
   localStorage.setItem("currentUser", '');
+  window.location.reload()
 }
 
   return (
     <div className={`navMain ${hasShadow ? 'shadow' : ''}`}>
         <nav>
-            <Fetchbuyers onDatafetchbuyers={setLocalcurbuyer} onDatafetchedlocalbuyer={setBuyerlist}/>
             <div className={`logsignModal ${openSignin}`}>
-                <Usermodalsign onOpensignin={setOpensignin}/>
+                <Usermodalsign onOpensignin={setOpensignin} onOpenCreate={'signin'}/>
             </div>
             <div className="nav-container">
                 <div className="mav-contents">
@@ -70,8 +84,15 @@ const logoutbtn = () => {
                             <li>products</li>
                             <li>about us</li>
                         </ul>
-                        <button onClick={openModalsign}> <TbPawFilled className='signIco'/>sign up</button>
-                        <button onClick={logoutbtn}> <TbPawFilled className='signIco'/>Logout</button>
+                        {!logout ? <button onClick={openModalsign}> <TbPawFilled className='signIco'/>sign up</button> :  
+                        <button className='userBtnnav'> <TbPawFilled className='signIco'/>{user.username}
+                          <ul className='userdetList'>
+                            <li>profile</li>
+                            <li>pet</li>
+                            <li onClick={logoutbtn}>Logout</li>
+                          </ul>
+                        </button>
+                        }
                     </div>
                 </div>
             </div>

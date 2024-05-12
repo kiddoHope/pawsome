@@ -7,7 +7,7 @@ import cat from '../../assets/purr-black-friday.png'
 // icons
 import { GrFormView,GrFormViewHide  } from "react-icons/gr";
 // backend
-import { insertUser,authenticateUser } from '../backend/database';
+import { insertUser,authenticateUser,retrieveUser } from '../backend/database';
 // axios
 import axios from 'axios';
 import Fetchbuyers from '../backend/fetchBuyers';
@@ -49,17 +49,31 @@ const [ passwordloginPlaceholder, setDefaultpasswordloginplaceholder ] = useStat
 // handling
 const [ successCreate, setSuccesscreate ] = useState( false );
 
+// useeffect
+useEffect(() => {
+    fetchBuyerlist()
+
+}, [])
+
+
 // show & hide pass
 const passwordSw = () => {
     if (showPassbtm === false) {
         setTypepass('text')
-        setShowbtn(true)
     } else {
         setTypepass('password')
-        setShowbtn(false)
     }
 }
-
+// fetch database
+async function fetchBuyerlist() {
+    try {
+        const response = await fetch(retrieveUser);
+        const data = await response.json();
+        setUserslist(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 // close signin
 const closeModal = () => {
     onOpensignin(false)
@@ -94,6 +108,18 @@ const handleLoginpassword = ( event ) => {
     setLoginpassword( event.target.value );
 };
 
+
+
+//  login session 
+const loginsessionGenerator = (length) => {
+    const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        result += charset.charAt(randomIndex);
+    }
+    return result;
+}
 async function createAccount () {
     if ( createUsername === "" && createPassword === "" && createEmail === "" ) {
       setnoCreateusername( true );
@@ -134,7 +160,7 @@ async function createAccount () {
         };
         const customerID = customerIDGenerator(11)
       if ( createEmail.includes( "@", ".com" ) ) {
-        if (usersList === undefined) {
+        if (usersList === '[]') {
             const insertdata = {
             customerId: customerID,
             mobileno: "0",
@@ -156,6 +182,7 @@ async function createAccount () {
                 console.log(errorRec);
             } );
         } else {
+            console.log(usersList);
             const filterDataemail = usersList.filter( item => item.email === createEmail );
             const filterDatausername = usersList.filter( item => item.username === createUsername );
             if ( filterDatausername.length !== 0) {
@@ -194,7 +221,7 @@ async function createAccount () {
             }
         }
       } else if ( /^\d+$/.test( createEmail ) && createEmail.length > 5 ) {
-        if (usersList === undefined) {
+        if (usersList === '') {
             const insertdata = {
                 customerId: customerID,
                 mobileno: createEmail,
@@ -269,15 +296,8 @@ const loginBuyer = () => {
         setnoLoginpassword(true)
         setDefaultuserloginplaceholder("fill username")
     } else {
-        const loginsessionGenerator = (length) => {
-        const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZ0123456789';
-        let result = '';
-        for (let i = 0; i < length; i++) {
-            const randomIndex = Math.floor(Math.random() * charset.length);
-            result += charset.charAt(randomIndex);
-        }
-        return result;
-        };
+        
+        
         
         const newRandomString = loginsessionGenerator(20);
         const loginSession = "pawsome"+newRandomString+"log"
@@ -297,10 +317,9 @@ const loginBuyer = () => {
             const jsonData = JSON.stringify(logged[0])
             localStorage.setItem('currentUser', jsonData)
             localStorage.setItem('logUser', localsession)
-            alert('login successfully welcome user: ' + loginUsername)
             setTimeout( () => {
                 window.location.reload();
-            }, 3000 );
+            }, 1000 );
         })
         .catch( (error) => {
             const errorRec = error.response.data.error
@@ -322,7 +341,6 @@ const loginBuyer = () => {
 
   return (
     <div className="signInmodal">
-        <Fetchbuyers fromFetch={setUserslist}/>
         <div className="mainSigninModal">
             <div className={`successSignup-acc ${successCreate}`}>
                 <div className={`scModal ${successCreate}`}>

@@ -7,25 +7,25 @@ import shopcat from '../assets/intro.png'
 import apple from '../assets/purr-apple.png'
 import fish from '../assets/purr-fish-5.png'
 import jar from '../assets/purr-jar-with-cookies.png'
-// js file
-import Fetchbuyers from './backend/fetchBuyers'
 
-const Introhome = ({ onOpensignin, onDatafetchedlocalbuyer }) => {
+const Introhome = ({ onOpensignin }) => {
   const [localCurbuyer, setLocalcurbuyer] = useState();
-  const [buyerList, setBuyerlist] = useState();
+
+  useEffect(() => {
+    handlelocalBuyer();
+  }, []);
 
   const openCreate = () => {
     onOpensignin(true);
   };
 
   const handlelocalBuyer = () => {
-    // Call onDatafetchedlocalbuyer as a function
-    const localData = onDatafetchedlocalbuyer();
-    setLocalcurbuyer(localData);
+    const data = localStorage.getItem("currentUser");
+    setLocalcurbuyer(data);
   };
+
   return (
     <div className="introHome">
-      <Fetchbuyers onDatafetchedlocalbuyer={handlelocalBuyer} />
       <div className="introHomemain">
         <div className="intHome-container">
           <div className="intHome-contents">
@@ -43,7 +43,9 @@ const Introhome = ({ onOpensignin, onDatafetchedlocalbuyer }) => {
                 <p>Your Pet's Favorite Online Food Store!</p>
                 <div className="introBtns">
                   <button>shop now</button>
-                  <button onClick={openCreate}>create account</button>
+                  {!localCurbuyer && (
+                    <button onClick={openCreate}>create account</button>
+                  )}
                 </div>
               </div>
             </section>

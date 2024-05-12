@@ -22,7 +22,7 @@ const [openModal,setOpenModal] = useState()
     <div className={`createModalhome ${openModal}`}>
         <Usermodalsign onOpensignin={setOpenModal}/>
     </div>
-      <Fetchbuyers onDatafetchbuyers={setBuyerlist} onDatafetchedlocalbuyer={setLocalcurbuyer}/>
+      {/* <Fetchbuyers onDatafetchbuyers={setBuyerlist} onDatafetchedlocalbuyer={setLocalcurbuyer}/> */}
       <div className="mainHome">
           <div className="mainHome-container">
               <div className="mainHome-contents">
