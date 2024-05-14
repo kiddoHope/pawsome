@@ -88,15 +88,15 @@ const logoutbtn = () => {
                           <li>products</li>
                           <li>about us</li>
                       </ul>
-                      {/* {!logout ? <button onClick={openModalsign}> <TbPawFilled className='signIco'/>sign up</button> :  
-                      <button className='userBtnnav'> <TbPawFilled className='signIco'/>{user.username}
+                      {!logout ? <button onClick={openModalsign}> <TbPawFilled className='signIco'/>sign up</button> :  
+                      <button className='userBtnnav'> <TbPawFilled className='signIco'/>{user}
                         <ul className='userdetList'>
                           <li>profile</li>
                           <li>pet</li>
                           <li onClick={logoutbtn}>Logout</li>
                         </ul>
                       </button>
-                      } */}
+                      }
                   </div>
               </div>
           </div>

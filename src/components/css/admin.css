@@ -1,3 +1,23 @@
+.loading-data{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+}
+.loading-data img{
+    height: auto;
+    width: 7vw;
+    animation: 5s load ease infinite;
+}
+.catLoader h1{
+    font-size: 1vw;
+    margin: 2vw 0 0 0;
+}
+
+
 .admin{
     height: auto;
     width: 100%;
@@ -7,31 +27,353 @@
     width: 100%;
 }
 .admin-header{
-    border-bottom: .2vw solid black;
-    padding: 1vw;
-}
-.adminUser{
-    width: 7vw;
-    padding: 1vw;
-    background: white;
-    outline: .2vw solid black;
-    box-shadow: .3vw .3vw 0 black;
-    border-radius: 1vw;
+    padding: 2vw 2vw 1vw 2vw;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: .3s ease;
+    justify-content: space-between;
 }
-.adminUser:hover{
-    box-shadow: .5vw .5vw 0 black;
+.admin-header section{
+    display: flex;
+    align-items: center;
+}
+.admin-header section img{
+    height: auto;
+    width: 3vw;
+    margin: 0 1vw 0 0;
 }
 .adminUser h1{
-    font-size: 1vw;
+    font-size: 1.2vw;
+    margin: 0;
+}
+.adminUser p{
+    font-size: .7vw;
     margin: 0;
     font-weight: 500;
 }
 .admin-contents{
-    display: grid;
-    grid-template-columns: 30% 70%;
+    padding: 0 2vw;
+    box-sizing: border-box;
+    position: relative;
+}
+.admin-contents section{
+    display: flex;
+    margin: 0;
+    box-sizing: border-box;
+}
+.admin-contents section ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.admin-contents section ul li{
+    padding: .5vw;
+    border: .2vw solid black;
+    box-shadow: .5vw .5vw 0 black;
+    border-radius: 1vw;
+    margin: .5vw;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.admin-contents section ul li h1{
+    margin: .5vw;
+    font-size: .7vw;
+}
+.admin-contents section ul li p{
+    font-size: 1.5vw;
+    margin: 0;
+    line-height: 1.5vw;
+}
+.admin-contents section ul li span{
+    font-size: 2vw;
+    margin: 0;
+}
+.adminSearch{
+    display: flex;
+    align-items: center;
+}
+.adSearch{
+    padding: .3vw .7vw;
+    border: none;
+    outline: .2vw solid black;
+    border-radius: 2vw;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+}
+.adSearch input{
+    width: 100%;
+    box-sizing: border-box;
+    background: none;
+    outline: 0;
+    border: none;
+    font-family: 'babydoll';
+    font-size: .9vw;
+}
+
+
+.customerPet-count{
+    display: flex;
+}
+.customerPet-count li{
+    height: 12vw;
+    width: 12vw;
+}
+.adpetHissue{
+    height: 8vw;
+    width: 25vw;
+    display: flex;
+}
+.admostOrder{
+    height: 10vw;
+    width: 21vw;
+}
+.petOrder-subscription{
+    display: flex;
+}
+.petOrder-subscription li{
+    height: 10vw;
+    width: 10vw;
+}
+.adlist3{
+    width: 100%;
+}
+.adlist3 li{
+    height: 21vw;
+    width: 100%;
+}
+.adgender-size{
+    display: flex;
+}
+.admost-ordered li{
+    height: 10.5vw;
+    width: 20vw;
+}
+.adgenderSize li{
+    height: 5vw;
+    width: 20vw;
+    display: flex;
+    align-items: start;
+}
+#petGender{
+    padding: .5vw;
+}
+#petGender h1{
+    margin: 0;
+}
+.adgenderSize li div{
+    margin: 0 .2vw;
+    padding: .2vw;
+    border: .1vw solid black;
+    border-radius: 1vw;
+    width: 100%;
+}
+.adgenderSize li h2{
+    font-size: 1vw;
+    margin: 0 1vw;
+}
+#listBreed{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#breedSize{
+    padding: .4vw;
+}
+#breedSize h1{
+    margin: 0;
+    font-size: .7vw;
+}
+.petlife-neutered{
+    display: flex;
+}
+.adpetlife-neutered{
+    display: flex;
+}
+.adpetLife{
+    height: 8vw;
+    width: 32vw;
+}
+.adpetLife div{
+    border: .1vw solid black;
+    border-radius: 1vw;
+    padding: .5vw 2vw;
+    margin: 0 .5vw;
+}
+.adneutered{
+    height: 8vw;
+    width: 8vw;
+}
+.addataLast{
+    position: absolute;
+    right: 1vw;
+    top: 22vw;
+}
+.addataLast ul{
+    display: flex;
+}
+.adAllergen{
+    height: 19.5vw;
+    width: 23vw;
+}
+.addryFood{
+    height: 19.5vw;
+    width: 30vw;
+}
+.issue{
+    margin: 0 .2vw;
+}
+.issue p{
+    border: .1vw solid black;
+    border-radius: 1vw;
+    padding: .5vw;
+}
+
+
+/* search modal */
+
+.adsm-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.adsm-header p{
+    font-size: 1vw;
+    font-weight: 600;
+}
+.adsm-header span{
+    font-size: 2vw;
+    cursor: pointer;
+}
+.adsearchModal{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.4px);
+    -webkit-backdrop-filter: blur(12.4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.adsearchModal.true{
+    visibility: visible;
+    opacity: 1;
+}
+.adsm-container{
+    border: .2vw solid black;
+    box-shadow: .4vw .4vw 0 black;
+    background: white;
+    border-radius: 2vw;
+    padding: 0 1vw;
+}
+
+.searchProf{
+    display: flex;
+    align-items: center;
+}
+.adsm-profimg{
+    padding: 1vw;
+    border: .2vw solid black;
+    border-radius: 1.5vw;
+    margin: 0 1vw 0 0;
+}
+.adsm-profimg img{
+    height: auto;
+    width: 6vw;
+}
+.adsm-prof-text h1{
+    margin: 0;
+    font-size: 1vw;
+}
+.adsm-prof-text span{
+    margin: 0;
+    font-size: .7vw;
+}
+
+.searchprof-details{
+    margin: 1vw 0 0 0;
+}
+.orderInfo{
+    display: flex;
+}
+.orderInfo li{
+    text-align: center;
+    list-style: none;
+    padding: .5vw;
+    border: .2vw solid black;
+    box-shadow: .2vw .2vw 0 black;
+    border-radius: 1vw;
+    margin: 0 .5vw 0 0;
+    width: 100%;
+    word-wrap: break-word;
+}
+.orderInfo li h1{
+    margin: 0;
+    font-size: 2vw;
+}
+.orderInfo li span{
+    margin: 0;
+    font-size: .7vw;
+}
+.adsm-petInfo{
+    display: flex;
+    margin: 1vw 0;
+}
+.adsm-petInfo div{
+    margin: 0 .5vw;
+    border: .2vw solid black;
+    box-shadow: .2vw .2vw 0 black;
+    padding: 1vw 2vw 2vw 2vw;
+    border-radius: 1vw;
+    width: 10vw;
+}
+.adsm-petInfo div h2{
+    margin: 0;
+    font-size: 1,5vw;
+}
+.adsm-petInfo div h1{
+    margin: 1vw 0 0 0;
+    font-size: 1vw;
+}
+.adsm-petInfo div span{
+    margin: 0;
+    font-size: .7vw;
+}
+#adSearchicon{
+    font-size: 1vw;
+    cursor: pointer;
+}
+.modalCatload{
+    display: flex;
+    align-items: center;
+    padding: 10vw;
+    text-align: center;
+}
+.modalCatload h1{
+    margin: 3vw 0 0 0;
+    font-size: 1vw;
+}
+.modalCatload img{
+    height: auto;
+    width: 10vw;
+    animation: 5s load ease infinite;
+}
+
+@keyframes load {
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(120deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }

@@ -20,9 +20,10 @@ import emily from '../assets/purr-two-cats-stretching-their-hind-legs.png'
 import selfie from '../assets/purr-camera-access.png'
 
 const Introhome = ({ onOpensignin }) => {
+  // useState
   const [localCurbuyer, setLocalcurbuyer] = useState();
-
   const [likePost, setLikepost] = useState(false)
+
 
   const likeftPost = () => {
       setLikepost(likePost=>!likePost)
@@ -42,6 +43,7 @@ const Introhome = ({ onOpensignin }) => {
     setLocalcurbuyer(data);
   };
 
+  
   return (
     <div className="introHome">
       <div className="introHomemain">

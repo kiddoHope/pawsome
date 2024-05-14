@@ -10,7 +10,6 @@ import { GrFormView,GrFormViewHide  } from "react-icons/gr";
 import { insertUser,authenticateUser,retrieveUser } from '../backend/database';
 // axios
 import axios from 'axios';
-import Fetchbuyers from '../backend/fetchBuyers';
 import SuccessSignup from './successModal';
 
 const Usermodalsign = ({ onOpensignin,fromFetch }) => {

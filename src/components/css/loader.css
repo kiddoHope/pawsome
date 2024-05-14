@@ -30,3 +30,10 @@
         transform: rotate(360deg);
     }
 }
+
+@media screen and (max-width: 500px){
+    .mainLoader img{
+        width: 20vw;
+    }
+
+}
