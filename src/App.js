@@ -11,12 +11,12 @@ import Admin from "./components/pages/admin/admin";
 function App() {
 const [loading, setLoading] = useState(true)
 
-// if (loading) {
-//   setTimeout(() => {
-//     setLoading(false)
-//   }, 5000);
-//   return <Loader />;
-// }
+if (loading) {
+  setTimeout(() => {
+    setLoading(false)
+  }, 5000);
+  return <Loader />;
+}
   return (
     <Router>
       <div className="App">

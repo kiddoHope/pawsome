@@ -89,7 +89,7 @@ const logoutbtn = () => {
                           <li>about us</li>
                       </ul>
                       {!logout ? <button onClick={openModalsign}> <TbPawFilled className='signIco'/>sign up</button> :  
-                      <button className='userBtnnav'> <TbPawFilled className='signIco'/>{user}
+                      <button className='userBtnnav'> <TbPawFilled className='signIco'/>{user.username}
                         <ul className='userdetList'>
                           <li>profile</li>
                           <li>pet</li>
